@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>表單樣本</title>
+	<style>
+		body {
+			background-image: url("https://img.freepik.com/premium-vector/close-up-man-with-mustache-shooting-pool-ball-illustration-billiard-game-cartoon-flat-illustration-editable_201904-9.jpg?w=740");
+			background-size: cover;
+			font-family: Arial, sans-serif;
+			color: #fff;
+		}
+		
+		form {
+			margin: 50px auto;
+			padding: 20px;
+			max-width: 500px;
+			background-color: rgba(255, 255, 255, 0.8);
+			border-radius: 10px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		input[type="text"] {
+			margin-bottom: 10px;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			width: 100%;
+			font-size: 16px;
+			box-sizing: border-box;
+		}
+		
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-top: 10px;
+		}
+		
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+		
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-top: 20px;
+		}
+		
+		th, td {
+			padding: 10px;
+			text-align: center;
+			border: 1px solid #ddd;
+			font-size: 16px;
+		}
+		
+		th {
+			background-color: #4CAF50;
+			color: #fff;
+		}
+		
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+		
+		#winner-btn, #boss-btn, #update-btn {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-top: 10px;
+		}
+		
+		#winner-btn:hover, #boss-btn:hover, #update-btn:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<table>
+			<thead>
+				<tr>
+					<th>序號</th>
+					<th>人名</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td><input type="text" placeholder="AAA"></td>
+					<button id="winner-btn">獲勝</button>
+					<button id="boss-btn">老闆</button>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td><input type="text" placeholder="BBB"></td>
+					<button id="winner-btn">獲勝</button>
+					<button id="boss-btn">老闆</button>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td><input type="text" placeholder="CCC"></td>
+					<button id="winner-btn">獲勝</button>
+					<button id="boss-btn">老闆</button>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td><input type="text" placeholder="DDD"></td>
+					<button id="winner-btn">獲勝</button>
+					<button id="boss-btn">老闆</button>
+				</tr>
+			</tbody>
+		</table>
+	<button id="update-btn">更新</button>
+	</form>
+</body>
+</html>
