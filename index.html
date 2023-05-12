@@ -1,129 +1,183 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>表單樣本</title>
-	<style>
-		body {
-		background-image: url("https://github.com/maxchang-ai/pool/blob/main/icon/background.png");
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: contain;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 100vh;
-		margin: 0;
-		}
-		
-		form {
-			margin: 50px auto;
-			padding: 20px;
-			max-width: 500px;
-			background-color: rgba(255, 255, 255, 0.8);
-			border-radius: 10px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
-		
-		input[type="text"] {
-			margin-bottom: 10px;
-			padding: 10px;
-			border: none;
-			border-radius: 5px;
-			width: 100%;
-			font-size: 16px;
-			box-sizing: border-box;
-		}
-		
-		input[type="submit"] {
-			background-color: #4CAF50;
-			color: #fff;
-			padding: 10px 20px;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-			margin-top: 10px;
-		}
-		
-		input[type="submit"]:hover {
-			background-color: #3e8e41;
-		}
-		
-		table {
-			width: 100%;
-			border-collapse: collapse;
-			margin-top: 20px;
-		}
-		
-		th, td {
-			padding: 10px;
-			text-align: center;
-			border: 1px solid #ddd;
-			font-size: 16px;
-		}
-		
-		th {
-			background-color: #4CAF50;
-			color: #fff;
-		}
-		
-		tr:nth-child(even) {
-			background-color: #f2f2f2;
-		}
-		
-		#winner-btn, #boss-btn, #update-btn {
-			background-color: #4CAF50;
-			color: #fff;
-			padding: 10px 20px;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-			margin-top: 10px;
-		}
-		
-		#winner-btn:hover, #boss-btn:hover, #update-btn:hover {
-			background-color: #3e8e41;
-		}
-	</style>
+  <title>表單樣本</title>
+  <!-- 載入Google字型的Noto Sans TC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap" rel="stylesheet">
+  <!-- 設定網頁背景 -->
+  <style>
+    body {
+      background-image: url("https://raw.githubusercontent.com/maxchang-ai/pool/main/icon/background.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    /* 設定文字閃爍效果 */
+    .blink {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 70%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    .blink strong {
+      font-size: calc(25vw / 3);
+      font-family: 'Noto Sans TC', sans-serif;
+      color: #ffffff;
+      animation: blink 2s linear infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    /* 設定透明按鈕樣式 */
+    .transparent-button {
+      background-color: transparent;
+      border-color: transparent;
+    }
+
+    /* 設定表單元件的位置和樣式 */
+    .container {
+      position: absolute;
+      top: 25%;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50vh;
+    }
+
+    .playerNumForm {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50%;
+    }
+	
+    #minus-btn,
+    #plus-btn {
+      width: 60%;
+      height: auto;
+      text-align: center;	  
+      font-size: calc(20vw);
+      font-family: 'Noto Sans TC', sans-serif;
+      color: #ffffff;
+	  opacity: 0.4;
+	  text-shadow: 2px 2px 2px #000000;
+    }
+	
+    #playerNum {
+      background-color: transparent;
+      border-color: transparent;
+      width: 50%;
+      height: auto;
+      text-align: center;
+      font-size: calc(35vw);
+      font-family: 'Noto Sans TC', sans-serif;
+      color: #ffffff;
+	  opacity: 0.8;
+	  text-shadow: 2px 2px 2px #000000;
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+  </style>
 </head>
 <body>
-	<form>
-		<table>
-			<thead>
-				<tr>
-					<th>序號</th>
-					<th>人名</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>1</td>
-					<td><input type="text" placeholder="AAA"></td>
-					<td><button id="winner-btn">獲勝</button></td>
-					<td><button id="boss-btn">老闆</button></td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td><input type="text" placeholder="BBB"></td>
-					<td><button id="winner-btn">獲勝</button></td>
-					<td><button id="boss-btn">老闆</button></td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td><input type="text" placeholder="CCC"></td>
-					<td><button id="winner-btn">獲勝</button></td>
-					<td><button id="boss-btn">老闆</button></td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td><input type="text" placeholder="DDD"></td>
-					<td><button id="winner-btn">獲勝</button></td>
-					<td><button id="boss-btn">老闆</button></td>
-				</tr>
-			</tbody>
-		</table>
-	<button id="update-btn">更新</button>
-	</form>
+<!-- 開始遊戲_按鈕 -->
+<div class="blink">
+	<button class="transparent-button" id="start-btn" style="display:block" onclick="startGame()">
+		<strong>- 開始遊戲 -</strong>
+	</button>
+</div>
+
+<!-- 決定人數_按鈕 -->
+<div class="blink">
+  <button class="transparent-button" id="confirmPlayerNum-btn" style="display:none" onclick="confirmPlayerNum()">
+    <strong>- 決定人數 -</strong>
+  </button>
+</div>
+
+<!-- 確認玩家_按鈕 -->
+<div class="blink">
+  <button class="transparent-button" id="confirmPlayerName-btn" style="display:none">
+    <strong>- 確認玩家 -</strong>
+  </button>
+</div>
+
+<!-- 設定人數表單 -->
+<div class="container" style="display:none" id="playerSetForm">
+  <form class="playerNumForm">
+    <button id="minus-btn" type="button">－</button>
+    <input id="playerNum" type="number" min="3" max="9" value="4" readonly />
+    <button id="plus-btn" type="button">＋</button>
+  </form>
+</div>
+
+<!-- JavaScript程式碼，控制按鈕的行為 -->
+<script>
+  // 開始遊戲按鈕按下後顯示決定人數按鈕和設定人數表單
+  function startGame() {
+    document.getElementById("start-btn").style.display = "none";
+    document.getElementById("confirmPlayerNum-btn").style.display = "block";
+    document.getElementById("playerSetForm").style.display = "block";
+  }
+
+  // 設定人數表單的減號按鈕
+  const minusBtn = document.getElementById("minus-btn");
+  minusBtn.addEventListener("click", () => {
+    const numberInput = document.getElementById("playerNum");
+    // 如果目前的數字大於最小值，就把數字減1
+    if (parseInt(numberInput.value) > parseInt(numberInput.min)) {
+      numberInput.value = parseInt(numberInput.value) - 1;
+    }
+  });
+
+  // 設定人數表單的加號按鈕
+  const plusBtn = document.getElementById("plus-btn");
+  plusBtn.addEventListener("click", () => {
+    const numberInput = document.getElementById("playerNum");
+    // 如果目前的數字小於最大值，就把數字加1
+    if (parseInt(numberInput.value) < parseInt(numberInput.max)) {
+      numberInput.value = parseInt(numberInput.value) + 1;
+    }
+  });
+  
+  // 決定人數按鈕按下後顯示確認玩家按鈕和設定玩家表單
+  function confirmPlayerNum() {
+    document.getElementById("confirmPlayerNum-btn").style.display = "none";
+    document.getElementById("playerSetForm").style.display = "none";
+    document.getElementById("confirmPlayerName-btn").style.display = "block";
+	}
+</script>
+
 </body>
 </html>
