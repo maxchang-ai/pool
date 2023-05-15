@@ -103,12 +103,14 @@
 		cursor: pointer;
     }
 	
-	#confirmPlayerName-list {
+	#setPlayerName-list,
+	#SetFinalPlayer-list {
 		position: absolute;
 		top: 12%;
 	}
 	
-	#player-list li {
+	#SetPlayerList li,
+	#FinalPlayerList li {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -117,12 +119,14 @@
 		margin-left: -5%;
 	}
 	
-	#player-list img {
+	#SetPlayerList img,
+	#FinalPlayerList img {
 		width: 15%;
 		margin-right: 25px;
 	}
 	
-	#player-list input {
+	#SetPlayerList input,
+	#FinalPlayerList input {
 		border: none;
 		border-bottom: 1px solid black;
 		padding: 5px;
@@ -132,8 +136,10 @@
 		font-family: 'Noto Sans TC', sans-serif;
 		text-shadow: 2px 2px 2px #FFFFFF;
 		color: #000000;
-		border-radius: 80px
+		border-radius: 80px;
+
 	}
+	
 	</style>
 </head>
 
@@ -147,14 +153,14 @@
 	
 	<!-- 決定人數_按鈕 -->
 	<div class="blink">
-		<button class="transparent-button" id="confirmPlayerNum-btn" style="display:none" onclick="CLICK_confirmPlayerNum();generatePlayerList()">
+		<button class="transparent-button" id="confirmPlayerNum-btn" style="display:none" onclick="CLICK_confirmPlayerNum();generateSetPlayerList()">
 			<strong>- 決定人數 -</strong>
 		</button>
 	</div>
 	
 	<!-- 確認玩家_按鈕 -->
 	<div class="blink">
-		<button class="transparent-button" id="confirmPlayerName-btn" style="display:none" onclick="CLICK_confirmPlayerName()">
+		<button class="transparent-button" id="setPlayerName-btn" style="display:none" onclick="CLICK_confirmPlayerName();generateFinalPlayerList()">
 			<strong>- 確認玩家 -</strong>
 		</button>
 	</div>
@@ -169,8 +175,13 @@
 	</div>
 	
 	<!-- 設定玩家名稱 -->
-	<div id="confirmPlayerName-list" style="display:none" >
-		<ul id="player-list"></ul>
+	<div id="setPlayerName-list" style="display:none">
+		<ul id="SetPlayerList"></ul>
+	</div>
+	
+	<!-- 確認玩家名單 -->
+	<div id="SetFinalPlayer-list" style="display:none">
+		<ul id="FinalPlayerList"></ul>
 	</div>
 	
 <!-- JavaScript程式碼，控制按鈕的行為 -->
@@ -206,35 +217,68 @@
 	function CLICK_confirmPlayerNum() {
 		document.getElementById("confirmPlayerNum-btn").style.display = "none";
 		document.getElementById("playerNumSet-Form").style.display = "none";
-		document.getElementById("confirmPlayerName-btn").style.display = "block";
-		document.getElementById("confirmPlayerName-list").style.display = "block";
+		document.getElementById("setPlayerName-btn").style.display = "block";
+		document.getElementById("setPlayerName-list").style.display = "block";
 	}
 	
 	// 生成設定表單, 以撞球圖片作為序號, 並且加入可輸入的玩家名稱欄位
-	function generatePlayerList() {
-		const num = parseInt(document.getElementById("playerNum").value, 10);
-		const container = document.getElementById("player-list");
-		
-		container.innerHTML = "";
-		
-		for (let i = 1; i <= num; i++) {
-			const listItem = document.createElement("li");
-			const img = document.createElement("img");
-			const input = document.createElement("input");
-			
-			img.setAttribute("src", `https://raw.githubusercontent.com/maxchang-ai/pool/main/icon/ball_0${i}.png`);
-			input.setAttribute("type", "text");
-		
-			listItem.appendChild(img);
-			listItem.appendChild(input);
-			container.appendChild(listItem);
-		}
-	}
+  function generateSetPlayerList() {
+    const num = parseInt(document.getElementById("playerNum").value, 10);
+    const container = document.getElementById("SetPlayerList");
+
+    container.innerHTML = "";
+
+    for (let i = 1; i <= num; i++) {
+      const listItem = document.createElement("li");
+      const img = document.createElement("img");
+      const input = document.createElement("input");
+      <!-- const span = document.createElement("span"); -->
+
+      img.setAttribute("src", `https://raw.githubusercontent.com/maxchang-ai/pool/main/icon/ball_0${i}.png`);
+      input.setAttribute("type", "text");
+      <!-- span.innerText = i; -->
+
+      listItem.appendChild(img);
+      listItem.appendChild(input);
+      <!-- listItem.appendChild(span); -->
+      container.appendChild(listItem);
+    }
+  }
 	// 確認玩家按鈕按下後顯示玩家清單及獲勝按鈕
 	function CLICK_confirmPlayerName() {
-		document.getElementById("confirmPlayerName-btn").style.display = "none";
-		document.getElementById("confirmPlayerName-list").style.display = "none";
+		document.getElementById("setPlayerName-btn").style.display = "none";
+		document.getElementById("setPlayerName-list").style.display = "none";
+		<!-- document.getElementById("setPlayerName-btn").style.display = "block"; -->
+		document.getElementById("SetFinalPlayer-list").style.display = "block";
 	}
+	
+function generateFinalPlayerList() {
+    const containerContainer = document.getElementById("SetFinalPlayer-list");
+    const FinalPlayerList = document.getElementById("FinalPlayerList");
+	
+    FinalPlayerList.innerHTML = "";
+
+    const playerList = document.getElementById("SetPlayerList");
+    const playerInputs = playerList.getElementsByTagName("input");
+
+    for (let i = 1; i <= playerInputs.length; i++) {
+      const listItem = document.createElement("li");
+      const img = document.createElement("img");
+      const playerName = playerInputs[i-1].value;
+      const input = document.createElement("input");
+
+      img.setAttribute("src", `https://raw.githubusercontent.com/maxchang-ai/pool/main/icon/ball_0${i}.png`);
+	  input.innerText = i;
+      const nameSpan = document.createElement("input");
+	  nameSpan.setAttribute("type", "text");
+      nameSpan.innerText = playerName;
+      listItem.appendChild(img);
+      <!-- listItem.appendChild(input); -->
+      listItem.appendChild(nameSpan);
+	  FinalPlayerList.appendChild(listItem);
+    }
+  }
+		
 </script>
 </body>
 </html>
