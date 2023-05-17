@@ -1,0 +1,130 @@
+    body {
+		background-image: url("https://raw.githubusercontent.com/maxchang-ai/pool/main/icon/background.png");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+		margin: 0;
+    }
+
+    /* 設定文字閃爍效果 */
+    .blink {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: fixed;
+		top: 85%;
+		left: 0;
+		width: 100%;
+		text-align: center;
+    }
+
+    .blink strong {
+		font-size: calc(25vw / 3);
+		font-family: 'Noto Sans TC', sans-serif;
+		color: #ffffff;
+		animation: blink 2s linear infinite;
+    }
+
+    @keyframes blink {
+		50% {
+			opacity: 0;
+		}
+    }
+
+    /* 設定透明按鈕樣式 */
+	.transparent-button {
+		background-color: transparent;
+		border-color: transparent;
+    }
+
+    /* 設定表單元件的位置和樣式 */
+	.container {
+		position: absolute;
+		top: 25%;
+		left: 0;
+		right: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: auto;
+		flex-direction: column;
+    }
+
+    .playerNumForm {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 50%;
+    }
+	
+    #minus-btn,
+    #plus-btn {
+		width: 60%;
+		height: auto;
+		text-align: center;	  
+		font-size: calc(20vw);
+		font-family: 'Noto Sans TC', sans-serif;
+		color: #ffffff;
+		opacity: 0.4;
+		text-shadow: 2px 2px 2px #000000;
+    }
+	
+    #playerNum {
+		background-color: transparent;
+		border-color: transparent;
+		width: 50%;
+		height: auto;
+		text-align: center;
+		font-size: calc(35vw);
+		font-family: 'Noto Sans TC', sans-serif;
+		color: #ffffff;
+		opacity: 0.8;
+		text-shadow: 2px 2px 2px #000000;
+    }
+
+    button {
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+    }
+	
+	#setPlayerName-list,
+	#SetFinalPlayer-list {
+		position: absolute;
+		top: 12%;
+	}
+	
+	#SetPlayerList li,
+	#FinalPlayerList li {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 25px;
+		opacity: 0.8;
+		margin-left: -5%;
+	}
+	
+	#SetPlayerList img,
+	#FinalPlayerList img {
+		width: 15%;
+		margin-right: 25px;
+	}
+	
+	#SetPlayerList input,
+	#FinalPlayerList input {
+		border: none;
+		border-bottom: 1px solid black;
+		padding: 5px;
+		width: 35%;
+		text-align: center;
+		font-size: calc(9vw);
+		font-family: 'Noto Sans TC', sans-serif;
+		text-shadow: 2px 2px 2px #FFFFFF;
+		color: #000000;
+		border-radius: 80px;
+
+	}
