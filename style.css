@@ -111,7 +111,7 @@
 	#SetPlayerList img,
 	#FinalPlayerList img {
 		width: 15%;
-		margin-right: 25px;
+		margin-right: 26px;
 	}
 	
 	#SetPlayerList input,
@@ -126,5 +126,5 @@
 		text-shadow: 2px 2px 2px #FFFFFF;
 		color: #000000;
 		border-radius: 80px;
-
 	}
+	
