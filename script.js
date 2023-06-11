@@ -140,6 +140,7 @@ function generateFinalPlayerList() {
 function CLICK_confirmWinner() {
   const selectedIndex = getSelectedIndex(); // 取得當前所選取的欄位索引
   reorderFinalPlayerList(selectedIndex);
+  hideWinnerImages(); // 隱藏所有的winner image
 }
 
 // 取得當前所選取的欄位索引
@@ -203,4 +204,14 @@ function reorderFinalPlayerList(selectedIndex) {
   
   // 重新加入更新後的玩家項目
   playerItems.forEach((item) => containerOfFinalPlayerList.appendChild(item));
+}
+
+// 隱藏所有的winner image
+function hideWinnerImages() {
+  const containerOfFinalPlayerList = document.getElementById("FinalPlayerList");
+  const allWinnerImages = containerOfFinalPlayerList.querySelectorAll("li img[id^='imageInput0']");
+
+  allWinnerImages.forEach((image) => {
+    image.style.visibility = "hidden";
+  });
 }
