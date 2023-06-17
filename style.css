@@ -66,7 +66,7 @@
 		width: 60%;
 		height: auto;
 		text-align: center;	  
-		font-size: calc(20vw);
+		font-size: calc(13vw);
 		font-family: 'Noto Sans TC', sans-serif;
 		color: #ffffff;
 		opacity: 0.4;
@@ -79,7 +79,7 @@
 		width: 50%;
 		height: auto;
 		text-align: center;
-		font-size: calc(35vw);
+		font-size: calc(20vw);
 		font-family: 'Noto Sans TC', sans-serif;
 		color: #ffffff;
 		opacity: 0.8;
