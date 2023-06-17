@@ -1,4 +1,4 @@
-.wrap {
+.playerNumSet-Form {
     height: 100vh; /*給 Safari 以外的瀏覽器讀取*/
     height: calc(var(--vh, 1vh) * 100);
 }
