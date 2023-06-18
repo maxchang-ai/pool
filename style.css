@@ -1,7 +1,3 @@
-.playerNumSet-Form {
-    height: 100vh; /*給 Safari 以外的瀏覽器讀取*/
-    height: calc(var(--vh, 1vh) * 100);
-}
     body {
 		background-image: url("https://raw.githubusercontent.com/maxchang-ai/pool/main/icon/background.png");
 		background-position: center;
