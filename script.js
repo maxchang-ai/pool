@@ -1,13 +1,3 @@
-function safariHacks() {
-    let windowsVH = window.innerHeight / 100;
-    document.querySelector('.playerNumSet-Form').style.setProperty('--vh', windowsVH + 'px');
-    window.addEventListener('resize', function() {
-        document.querySelector('.playerNumSet-Form').style.setProperty('--vh', windowsVH + 'px');
-    });
-}
-
-safariHacks();
-
 // 開始遊戲按鈕按下後顯示決定人數按鈕和設定人數表單
 	function CLICK_startGame() {
 		document.getElementById("start-btn").style.display = "none";
